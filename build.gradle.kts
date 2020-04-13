@@ -34,12 +34,14 @@ dependencies {
 
     implementation(npm("css-loader", "3.5.2"))
     implementation(npm("style-loader", "1.1.3"))
+    implementation(npm("file-loader", "6.0.0"))
 
     implementation(npm("karma", "4.4.1"))
 }
 
 kotlin.target {
     useCommonJs()
+    nodejs()
     browser {
         webpackTask {
             output.libraryTarget = COMMONJS
