@@ -1,3 +1,10 @@
+.app {
+    color: white;
+}
+
+.zero-padding {
+    padding: 0;
+}
 
 .header {
     border: 1px solid white;
@@ -5,4 +12,3 @@
     padding: 10px;
     box-shadow: lightgray;
 }
-

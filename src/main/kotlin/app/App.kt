@@ -9,7 +9,7 @@ import react.RState
 
 class App:RComponent<RProps, RState> () {
     override fun RBuilder.render() {
-        kotlinext.js.require("app.css");
+        kotlinext.js.require("./../resources/styles.css");
         appHeader()
         appBody()
     }
