@@ -7,7 +7,8 @@ plugins {
 group = "com.chai.kjs"
 version = "1.0-SNAPSHOT"
 
-val kotlin_wrapper_version = "1.0.0-pre.93-kotlin-1.3.70"
+val kotlin_react_version = "16.13.0-pre.94-kotlin-1.3.70"
+val kotlin_version = "pre.94-kotlin-1.3.70"
 
 repositories {
     maven("https://kotlin.bintray.com/kotlin-js-wrappers/")
@@ -18,17 +19,17 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-js"))
 
-    implementation(npm("react", "16.13.1"))
-    implementation(npm("react-dom", "16.13.1"))
-
-    implementation ("org.jetbrains:kotlin-react-dom:16.13.0-pre.94-kotlin-1.3.70")
-    implementation ("org.jetbrains:kotlin-react:16.13.0-pre.94-kotlin-1.3.70")
-    implementation ("org.jetbrains:kotlin-css:$kotlin_wrapper_version")
-    implementation ("org.jetbrains:kotlin-css-js:$kotlin_wrapper_version")
-    implementation ("org.jetbrains:kotlin-styled:$kotlin_wrapper_version")
-
-    implementation(npm("inline-style-prefixer", "^6.0.0"))
-    implementation(npm("styled-components", "^5.1.0"))
+    implementation ("org.jetbrains.kotlinx:kotlinx-html:0.6.12")
+    implementation ("org.jetbrains:kotlin-react:16.13.0-$kotlin_version")
+    implementation ("org.jetbrains:kotlin-react-dom:16.13.0-$kotlin_version")
+    implementation ("org.jetbrains:kotlin-styled:1.0.0-$kotlin_version")
+    implementation ("org.jetbrains:kotlin-extensions:1.0.1-$kotlin_version")
+    implementation ("org.jetbrains:kotlin-css-js:1.0.0-$kotlin_version")
+    implementation(npm("react", "16.13.0"))
+    implementation(npm("react-dom", "16.13.0"))
+    implementation(npm("react-is", "16.13.0"))
+    implementation(npm("inline-style-prefixer", "5.1.0"))
+    implementation(npm("styled-components", "4.3.2"))
 
     implementation(npm("axios", "^0.19.2"))
     implementation(npm("bootstrap", "^4.4.1"))
