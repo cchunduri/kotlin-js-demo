@@ -1,3 +1,8 @@
+config.resolve.modules.push("processedResources/Js/main");
+
+config.devServer = config.devServer || {}
+config.devServer.port = 4000
+
 config.module.rules.push({
     test: /\.css$/,
     use: ["style-loader", "css-loader"]
