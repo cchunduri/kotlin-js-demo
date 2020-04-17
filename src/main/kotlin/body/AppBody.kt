@@ -25,11 +25,11 @@ class AppBody : RComponent<RProps, RState>() {
                 css {
                     +ComponentStyles.diSectionContainer
                 }
-                appSection {
-                    title = "World"
-                    isState = false
-                    isCountry = false
-                }
+//                appSection {
+//                    title = "World"
+//                    isState = false
+//                    isCountry = false
+//                }
 
                 appSection {
                     title = "India"

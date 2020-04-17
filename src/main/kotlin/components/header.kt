@@ -8,6 +8,7 @@ import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
+import react.router.dom.navLink
 import styled.*
 
 class Header: RComponent<RProps, RState> () {
@@ -20,7 +21,9 @@ class Header: RComponent<RProps, RState> () {
                 paddingTop = 10.px
                 paddingBottom = 10.px
             }
-            + "Covid Dashboard"
+            navLink("/", className = "nav-link") {
+                + "Covid Dashboard"
+            }
 
             styledUl {
                 attrs {
@@ -31,12 +34,7 @@ class Header: RComponent<RProps, RState> () {
                     attrs {
                         classes = setOf("nav-item active");
                     }
-
-                    styledA {
-                        attrs {
-                            classes = setOf("nav-link")
-                            href = "/search"
-                        }
+                    navLink("search", className = "nav-link") {
                         +"Search"
                     }
                 }

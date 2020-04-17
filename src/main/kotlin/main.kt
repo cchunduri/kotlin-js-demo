@@ -11,9 +11,10 @@ fun main() {
     render(document.getElementById("root")) {
         browserRouter {
             switch {
-                route("/", exact = true) {
+                route("/", exact = true, strict = true) {
                     app()
                 }
+
                 route("/search") {
                     search()
                 }

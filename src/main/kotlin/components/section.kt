@@ -10,9 +10,7 @@ import styled.*
 import kotlin.random.Random
 
 interface SectionState : RState {
-    var worldData: PlaceResponse
-    var stateData: PlaceResponse
-    var countryData: PlaceResponse
+    var placeData: PlaceResponse
 }
 
 interface SectionProps : RProps {
@@ -29,19 +27,19 @@ class Section(props: SectionProps) : RComponent<SectionProps, SectionState>(prop
             if (props.title == "World") {
                 getWorldData().then { res ->
                     setState {
-                        this.worldData = res.data
+                        this.placeData = res.data
                     }
                 }
             } else if (props.isState) {
                 getStateData(props.title).then { res ->
                     setState {
-                        this.stateData = res.data
+                        this.placeData = res.data
                     }
                 }
             } else if (props.isCountry){
                 getCountryData(props.title).then { res ->
                     setState {
-                        this.countryData = res.data
+                        this.placeData = res.data
                     }
                 }
             }
@@ -83,11 +81,11 @@ class Section(props: SectionProps) : RComponent<SectionProps, SectionState>(prop
 
     private fun getResponse(): PlaceResponse {
         if (props.isState) {
-            return state.stateData
+            return state.placeData
         } else if (props.isCountry) {
-            return state.countryData
+            return state.placeData
         } else {
-            return state.worldData
+            return state.placeData
         }
     }
 
